@@ -1,7 +1,6 @@
-using Commander.Dtos;
-using Commander.Interfaces;
-using Commander.Authentication;
-using Commander.Entities;
+using LeagueFootball.Dtos;
+using LeagueFootball.Interfaces;
+using LeagueFootball.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
