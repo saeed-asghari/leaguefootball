@@ -11,8 +11,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-
-namespace leaguefootball
+using System.Text;
+using Newtonsoft.Json;
+using AutoMapper;
+using LeagueFootball.Helpers;
+using Microsoft.EntityFrameworkCore;
+using LeagueFootball.Interfaces;
+namespace LeagueFootball
 {
     public class Startup
     {
@@ -26,7 +31,18 @@ namespace leaguefootball
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.AddDbContext<LeaguesDataContext>(opt=>opt.UseSqlServer(
+                Configuration.GetConnectionString("CommanderConnection")));
+                
+            services.AddControllers().AddNewtonsoftJson(s=>{
+            s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            s.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 
+            });
+             services.AddScoped<ILeagueService,SqlLeagueRepo>();
+             services.AddScoped<ITeamService,SqlTeamRepo>();
+             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

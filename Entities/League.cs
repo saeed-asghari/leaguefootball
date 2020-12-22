@@ -8,8 +8,8 @@ namespace LeagueFootball.Entities
     [Table("League")]
     public  class League
     {
-      
-        public int LeagueId { get; set; }
+       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int LeagueID { get; set; }
 
         [Required]
         [StringLength(200)]
