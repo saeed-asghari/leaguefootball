@@ -48,6 +48,13 @@ namespace LeagueFootball.Controller
 
 
       //POST api/team
+      //for example 
+      //* better than use postman  you should body set row and url set https://localhost:5001/api/team/
+    //   {
+    // "leagueID":"2",
+    // "name": "تیم دسته دو",
+    // "foundingDate": "2001-03-02T00:00:00"
+    //  }
         [HttpPost]
         public  ActionResult<TeamDTO> CreateTeam(TeamRequestModel teamRequestModel)
         {
@@ -61,8 +68,16 @@ namespace LeagueFootball.Controller
 
         }
 
-        
-       // PUT api/team/{id}
+
+        // PUT api/team/{id}
+        //for example 
+       //* better than use postman  you should body set row and url set https://localhost:5001/api/team/3
+      //  {
+          // "leagueID":"2",
+         // "name": "تیم  دو",
+         // "foundingDate": "2001-03-02T00:00:00"
+       //  }
+      
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateTeam(int id, TeamUpdateRequestModel teamUpdateRequestModel)
         {
