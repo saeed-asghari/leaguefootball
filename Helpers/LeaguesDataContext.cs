@@ -13,7 +13,7 @@ namespace LeagueFootball.Helpers
         public virtual DbSet<League> Leagues { get; set; }
         public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
-
+        public DbSet<User> Users { get; set; }
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           
