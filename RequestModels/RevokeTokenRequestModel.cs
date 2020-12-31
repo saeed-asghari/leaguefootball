@@ -1,4 +1,4 @@
-namespace WebApi.Models
+namespace LeagueFootball.RequestModels
 {
     public class RevokeTokenRequest
     {
