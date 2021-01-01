@@ -2,7 +2,7 @@
 Football League Manager
 ## Technologies
 * [.NET Core 5.0]
-## JWT powered by [JWT](https://github.com/cornflourblue/aspnet-core-3-jwt-refresh-tokens-api) 
+## JWT powered by [aspnet-core-3-jwt-refresh-tokens-api](https://github.com/cornflourblue/aspnet-core-3-jwt-refresh-tokens-api) 
 ### Installing
 Follow these steps to get your development environment set up:
 1. Clone the repository
