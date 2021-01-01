@@ -1,6 +1,6 @@
 namespace LeagueFootball.RequestModels
 {
-    public class RevokeTokenRequest
+    public class RevokeTokenRequestModel
     {
         public string Token { get; set; }
     }

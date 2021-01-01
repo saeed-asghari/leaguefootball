@@ -157,6 +157,40 @@ namespace leaguefootball.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LeagueFootball.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Saeed",
+                            LastName = "As",
+                            Password = "test",
+                            Username = "test"
+                        });
+                });
+
             modelBuilder.Entity("LeagueFootball.Entities.Player", b =>
                 {
                     b.HasOne("LeagueFootball.Entities.Team", null)
@@ -173,6 +207,52 @@ namespace leaguefootball.Migrations
                         .HasForeignKey("LeagueID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("LeagueFootball.Entities.User", b =>
+                {
+                    b.OwnsMany("LeagueFootball.Entities.RefreshToken", "RefreshTokens", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int")
+                                .UseIdentityColumn();
+
+                            b1.Property<DateTime>("Created")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("CreatedByIp")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<DateTime>("Expires")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("ReplacedByToken")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<DateTime?>("Revoked")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("RevokedByIp")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("Token")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("UserId")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("UserId");
+
+                            b1.ToTable("RefreshToken");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UserId");
+                        });
+
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("LeagueFootball.Entities.League", b =>

@@ -17,8 +17,8 @@ namespace LeagueFootball.Profiles
             CreateMap<TeamUpdateRequestModel,Team>();
 
             CreateMap<League, LeagueDTO>();
-            
-            CreateMap<User, AuthenticateDTO>();
+
+            //CreateMap<User, AuthenticateDTO>();
 
 
         }
