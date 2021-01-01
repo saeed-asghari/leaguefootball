@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LeagueFootball.RequestModels
 {
-    public class AuthenticateRequest
+    public class AuthenticateRequestModel
     {
         [Required]
         public string Username { get; set; }

@@ -16,6 +16,11 @@ namespace LeagueFootball.Profiles
             CreateMap<TeamRequestModel,Team>();
             CreateMap<TeamUpdateRequestModel,Team>();
 
+            CreateMap<League, LeagueDTO>();
+
+            //CreateMap<User, AuthenticateDTO>();
+
+
         }
     }
 }
