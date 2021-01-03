@@ -13,7 +13,7 @@ namespace LeagueFootball.Helpers
         public virtual DbSet<League> Leagues { get; set; }
         public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
-
+        public virtual DbSet<User> Users { get; set; }
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           
@@ -38,7 +38,14 @@ namespace LeagueFootball.Helpers
             modelBuilder.Entity<Player>().HasData(new Player {PlayerId=1,TeamId=1,FirstName = "سیدجلال ",LastName="حسینی", DateOfBirth = DateTime.ParseExact("1980-03-02","yyyy-MM-dd",null)});
             modelBuilder.Entity<Player>().HasData(new Player {PlayerId=2,TeamId=2,FirstName = "وریا ",LastName="غفوری" ,DateOfBirth = DateTime.ParseExact("1980-03-02","yyyy-MM-dd",null)});
             modelBuilder.Entity<Player>().HasData(new Player {PlayerId=3,TeamId=3,FirstName = "علی ",LastName="محمدی", DateOfBirth = DateTime.ParseExact("1980-03-02","yyyy-MM-dd",null)});
+
+
+
+            modelBuilder.Entity<User>().HasData(new User {Id=1, FirstName = "Saeed", LastName = "As", Username = "test", Password = "test" });
     
+
+          
+
         }
     }
 }

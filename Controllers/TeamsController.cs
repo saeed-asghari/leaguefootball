@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using LeagueFootball.RequestModels;
-
+using Microsoft.AspNetCore.Authorization;
 namespace LeagueFootball.Controller
 {
 
     //api/team
+    [Authorize]
     [Route("api/team")]
     [ApiController]
     public class TeamsController : ControllerBase
