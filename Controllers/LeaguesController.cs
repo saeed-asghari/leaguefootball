@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace LeagueFootball.Controller
 {
 
-    //[Authorize]
+    [Authorize]
     //api/League
     [Route("api/league")]
     [ApiController]
