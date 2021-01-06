@@ -11,18 +11,18 @@ namespace LeagueFootball.Controllers
     [Route("[controller]")]
     public class AuthenticateController : ControllerBase
     {
-        private IAuthenticate _authenticate;
+        private readonly IAuthenticateService _authenticateService;
 
-        public AuthenticateController(IAuthenticate authenticate)
+        public AuthenticateController(IAuthenticateService authenticateService)
         {
-            _authenticate = authenticate;
+            _authenticateService = authenticateService;
         }
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] AuthenticateRequestModel model)
         {
-            var response = _authenticate.Authenticate(model, ipAddress());
+            var response = _authenticateService.Authenticate(model, ipAddress());
 
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
@@ -37,7 +37,7 @@ namespace LeagueFootball.Controllers
         public IActionResult RefreshToken()
         {
             var refreshToken = Request.Cookies["refreshToken"];
-            var response = _authenticate.RefreshToken(refreshToken, ipAddress());
+            var response = _authenticateService.RefreshToken(refreshToken, ipAddress());
 
             if (response == null)
                 return Unauthorized(new { message = "Invalid token" });
@@ -56,7 +56,7 @@ namespace LeagueFootball.Controllers
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
 
-            var response = _authenticate.RevokeToken(token, ipAddress());
+            var response = _authenticateService.RevokeToken(token, ipAddress());
 
             if (!response)
                 return NotFound(new { message = "Token not found" });
@@ -69,7 +69,7 @@ namespace LeagueFootball.Controllers
         [HttpGet("{id}/refresh-tokens")]
         public IActionResult GetRefreshTokens(int id)
         {
-            var user = _authenticate.GetById(id);
+            var user = _authenticateService.GetById(id);
             if (user == null) return NotFound();
 
             return Ok(user.RefreshTokens);

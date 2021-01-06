@@ -13,7 +13,7 @@ using LeagueFootball.Interfaces;
 using Microsoft.EntityFrameworkCore;
 namespace LeagueFootball.Helpers
 {
-    public class SqlAuthenticateRepo : IAuthenticate
+    public class SqlAuthenticateRepo : IAuthenticateService
     {
         private readonly LeaguesDataContext _context;
         private readonly AppSettings _appSettings;
