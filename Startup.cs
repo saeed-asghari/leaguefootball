@@ -38,6 +38,7 @@ namespace LeagueFootball
             });
              services.AddScoped<ILeagueService,SqlLeagueRepo>();
              services.AddScoped<ITeamService,SqlTeamRepo>();
+             services.AddScoped<IAuthenticateService,SqlAuthenticateRepo>();
              services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
           services.AddCors();
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
