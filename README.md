@@ -1,3 +1,5 @@
+![example workflow name](https://github.com/actions/leaguefootball/workflows/Greet%20Everyone/badge.svg)
+
 ## The Project
 Football League Manager
 ## Technologies
