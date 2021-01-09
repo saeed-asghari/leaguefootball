@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/uafekpggogduuh9c/branch/master?svg=true)](https://ci.appveyor.com/project/saeed-asghari/leaguefootball/branch/master)
 ## The Project
 Football League Manager
 ## Technologies
