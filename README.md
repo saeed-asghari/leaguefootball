@@ -4,6 +4,7 @@ Football League Manager
 ## Technologies
 * [.NET Core 5.0]
 ## JWT powered by [aspnet-core-3-jwt-refresh-tokens-api](https://github.com/cornflourblue/aspnet-core-3-jwt-refresh-tokens-api) 
+## Config appveyor.yml and BuildScript powered by [Suzianna](https://github.com/suzianna/Suzianna)
 ### Installing
 Follow these steps to get your development environment set up:
 1. Clone the repository
