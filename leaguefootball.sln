@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leaguefootball", "leaguefootball.csproj", "{91E1CF08-D5A9-480F-BA2B-4EC6CC8A73F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "leaguefootball", "leaguefootball.csproj", "{91E1CF08-D5A9-480F-BA2B-4EC6CC8A73F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,11 @@ Global
 		{91E1CF08-D5A9-480F-BA2B-4EC6CC8A73F8}.Release|x64.Build.0 = Release|Any CPU
 		{91E1CF08-D5A9-480F-BA2B-4EC6CC8A73F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{91E1CF08-D5A9-480F-BA2B-4EC6CC8A73F8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5CDB0B6-832F-4F29-98E0-EB461453A3EF}
 	EndGlobalSection
 EndGlobal
