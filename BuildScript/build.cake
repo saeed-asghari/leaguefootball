@@ -1,16 +1,9 @@
 #tool "nuget:?package=xunit.runner.console&version=2.4.1"
 #tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
 
-using System.Text.RegularExpressions;
 
 var solutionPath = Argument("SolutionPath", "../leaguefootball/leaguefootball.sln");
-var buildNumber = Argument("BuildNumber","0");
-var shouldPublish = Argument("ShouldPublish", false);
-var branchName = Argument("BranchName", "");
-
 var projects = GetFiles("../leaguefootball/src/**/*.csproj");
-
-var isRunningOnCiServer = AppVeyor.IsRunningOnAppVeyor;
 
 Task("Clean")
     .Does(()=>{
