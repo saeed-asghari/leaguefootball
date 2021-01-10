@@ -7,13 +7,13 @@ for:
       only:
         - master
     build_script:
-      - ps: .\BuildScript\build.ps1 -Script BuildScript/build.cake -shouldPublish="True" -BranchName="master"
+      - ps: .\BuildScript\build.ps1 -Script BuildScript/build.cake  -BranchName="master"
   -
     branches:
       only:
         - develop
     build_script:
-      - ps: .\BuildScript\build.ps1 -Script BuildScript/build.cake -shouldPublish="False" -BranchName="develop"
+      - ps: .\BuildScript\build.ps1 -Script BuildScript/build.cake  -BranchName="develop"
 cache:
   - BuildScript\tools
 test: off
