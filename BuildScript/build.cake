@@ -27,8 +27,6 @@ Task("Restore-NuGet-Packages")
 
 
 
-
-
 Task("Build")
     .Does(()=>
     {
@@ -38,12 +36,9 @@ Task("Build")
     });
 
 
-
-
 Task("Default")
     .IsDependentOn("Clean")
     .IsDependentOn("Restore-NuGet-Packages")
     .IsDependentOn("Build");
-
 
 RunTarget("Default");
