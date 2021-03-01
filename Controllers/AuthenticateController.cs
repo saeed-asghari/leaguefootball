@@ -4,6 +4,9 @@ using LeagueFootball.RequestModels;
 using Microsoft.AspNetCore.Http;
 using System;
 using LeagueFootball.Interfaces;
+using AutoMapper;
+using leaguefootball.DTOs;
+
 namespace LeagueFootball.Controllers
 {
     [Authorize]
@@ -12,10 +15,11 @@ namespace LeagueFootball.Controllers
     public class AuthenticateController : ControllerBase
     {
         private readonly IAuthenticateService _authenticateService;
-
-        public AuthenticateController(IAuthenticateService authenticateService)
+        private readonly IMapper _mapper;
+        public AuthenticateController(IAuthenticateService authenticateService, IMapper mapper)
         {
             _authenticateService = authenticateService;
+            _mapper = mapper;
         }
 
         [AllowAnonymous]
@@ -29,7 +33,7 @@ namespace LeagueFootball.Controllers
 
             setTokenCookie(response.RefreshToken);
 
-            return Ok(response);
+            return Ok(_mapper.Map<AuthenticateResponseDTO>(response));
         }
 
         [AllowAnonymous]
@@ -44,7 +48,7 @@ namespace LeagueFootball.Controllers
 
             setTokenCookie(response.RefreshToken);
 
-            return Ok(response);
+            return Ok(_mapper.Map<AuthenticateResponseDTO>(response));
         }
 
         [HttpPost("revoke-token")]
